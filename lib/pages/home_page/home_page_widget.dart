@@ -68,10 +68,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           ),
         ),
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: FlutterFlowTheme.of(context).secondary,
           automaticallyImplyLeading: false,
           title: Text(
-            'Home Page',
+            'Github Starting',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   font: GoogleFonts.interTight(
                     fontWeight:
@@ -430,7 +430,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
+                    color: FlutterFlowTheme.of(context).secondary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           font: GoogleFonts.interTight(
                             fontWeight: FlutterFlowTheme.of(context)
