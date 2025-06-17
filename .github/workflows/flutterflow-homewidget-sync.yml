@@ -1,1 +1,50 @@
- 
+name: Sync FlutterFlow with HomeWidget Extension
+
+on:
+  push:
+    branches:
+      - flutterflow
+
+jobs:
+  sync-and-extend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout flutterflow branch
+        uses: actions/checkout@v4
+        with:
+          ref: flutterflow
+          fetch-depth: 0
+
+      - name: Set up git user
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create extension branch from flutterflow
+        run: |
+          git checkout -b homewidget-extension-tmp
+
+      - name: Add HomeWidget files and automation
+        run: |
+          chmod +x scripts/setup_homewidget_ios.sh
+          ./scripts/setup_homewidget_ios.sh
+
+      - name: Commit extension files
+        run: |
+          git add .
+          git diff --cached --quiet || git commit -m "Add HomeWidget extension files"
+
+      - name: Fetch and checkout main
+        run: |
+          git fetch origin main
+          git checkout main
+
+      - name: Merge extension branch into main
+        run: |
+          git merge --no-ff homewidget-extension-tmp -m "Merge HomeWidget extension from flutterflow"
+
+      - name: Push main branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push origin main 
