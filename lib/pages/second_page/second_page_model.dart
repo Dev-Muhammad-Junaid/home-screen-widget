@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'home_page_widget.dart' show HomePageWidget;
+import 'second_page_widget.dart' show SecondPageWidget;
 import 'package:flutter/material.dart';
 
-class HomePageModel extends FlutterFlowModel<HomePageWidget> {
+class SecondPageModel extends FlutterFlowModel<SecondPageWidget> {
   ///  Local state fields for this page.
 
   int? counter = 0;
