@@ -1,4 +1,3 @@
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'home_page_widget.dart' show HomePageWidget;
 import 'package:flutter/material.dart';
@@ -7,16 +6,6 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   ///  Local state fields for this page.
 
   int? counter = 0;
-
-  List<HomeDataRecord> homeDataList = [];
-  void addToHomeDataList(HomeDataRecord item) => homeDataList.add(item);
-  void removeFromHomeDataList(HomeDataRecord item) => homeDataList.remove(item);
-  void removeAtIndexFromHomeDataList(int index) => homeDataList.removeAt(index);
-  void insertAtIndexInHomeDataList(int index, HomeDataRecord item) =>
-      homeDataList.insert(index, item);
-  void updateHomeDataListAtIndex(
-          int index, Function(HomeDataRecord) updateFn) =>
-      homeDataList[index] = updateFn(homeDataList[index]);
 
   ///  State fields for stateful widgets in this page.
 
